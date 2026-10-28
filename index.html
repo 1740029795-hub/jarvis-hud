@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J.A.R.V.I.S.</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 背景粒子层 -->
+  <canvas id="bg"></canvas>
+
+  <!-- 扫描线 + 网格遮罩 -->
+  <div id="scanlines"></div>
+  <div id="grid"></div>
+
+  <!-- 顶部状态栏 -->
+  <header id="topbar">
+    <div class="brand">
+      <span class="logo">J.A.R.V.I.S.</span>
+      <span class="sub">Just A Rather Very Intelligent System</span>
+    </div>
+    <div class="status-cluster">
+      <div class="stat"><span id="clock">--:--:--</span></div>
+      <div class="stat"><span id="date">----/--/--</span></div>
+      <div class="stat online"><i class="dot"></i>SYSTEM ONLINE</div>
+    </div>
+  </header>
+
+  <!-- 左面板：系统状态 -->
+  <aside id="left-panel" class="panel">
+    <h2>SYSTEM STATUS</h2>
+    <div class="meters">
+      <div class="meter">
+        <label>CPU</label>
+        <div class="bar"><span id="cpu"></span></div>
+        <span class="val" id="cpu-val">0%</span>
+      </div>
+      <div class="meter">
+        <label>MEM</label>
+        <div class="bar"><span id="mem"></span></div>
+        <span class="val" id="mem-val">0%</span>
+      </div>
+      <div class="meter">
+        <label>NET</label>
+        <div class="bar"><span id="net"></span></div>
+        <span class="val" id="net-val">--</span>
+      </div>
+    </div>
+    <div class="sysinfo">
+      <div class="row"><span>连接类型</span><span id="conn-type">--</span></div>
+      <div class="row"><span>语音引擎</span><span id="stt-status">待初始化</span></div>
+      <div class="row"><span>后端</span><span id="backend-status">MOCK</span></div>
+    </div>
+    <div class="note">* CPU/MEM 为演示模拟数据</div>
+  </aside>
+
+  <!-- 右面板：活动流 -->
+  <aside id="right-panel" class="panel">
+    <h2>ACTIVITY LOG</h2>
+    <ul id="activity"></ul>
+  </aside>
+
+  <!-- 中央：电弧反应堆 + 对话 -->
+  <main id="center">
+    <div id="reactor-wrap">
+      <canvas id="reactor" width="340" height="340"></canvas>
+    </div>
+    <div id="chat">
+      <div id="log"></div>
+    </div>
+  </main>
+
+  <!-- 底部：语音控制 -->
+  <footer id="controls">
+    <button id="mic" title="点击说话">
+      <span class="mic-icon"></span>
+      <span class="mic-label">TALK</span>
+    </button>
+    <div class="ctl">
+      <span class="hint" id="listen-hint">按住 TALK 说话</span>
+      <label class="switch" title="贾维斯说话时，你开口即可打断">
+        <input type="checkbox" id="barge" />
+        <span class="track"></span>
+        <span>免提打断</span>
+      </label>
+    </div>
+  </footer>
+
+  <script src="js/backend.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+faster-whisper>=1.0
+fastapi
+uvicorn
+edge-tts
+python-multipart
+sentence-transformers
+pywinauto
+pyautogui
+pyperclip
+Pillow
+pywin32
+numpy

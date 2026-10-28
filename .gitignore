@@ -1,0 +1,7 @@
+.env
+model/
+data/
+.venv/
+ffmpeg/
+__pycache__/
+*.pyc
